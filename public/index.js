@@ -1,4 +1,4 @@
-fetch("http://localhost:3000/songs")
+fetch("/api/songs")
   .then((data) => data.json())
   .then((data) => {
     console.log(data);
