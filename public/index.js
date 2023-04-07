@@ -1,8 +1,10 @@
-const container = document.querySelector(".container");
+const containerEl = document.querySelector(".container");
 
 fetch("/api/songs")
-  .then((data) => data.json())
+  .then((response) => response.json())
   .then((data) => {
-    container.innerHTML = `<p>${JSON.parse(data)}</p>`;
+    data.forEach(element => {
+      containerEl.innerHTML += `<h2>${element}</h2>`;
+    });
     // console.log(data);
   });
