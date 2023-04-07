@@ -4,7 +4,7 @@ fetch("/api/songs")
   .then((response) => response.json())
   .then((data) => {
     data.forEach(element => {
-      containerEl.innerHTML += `<h2>${element}</h2>`;
+      containerEl.innerHTML += `<h2>${element.id}, ${element.name}, ${element.artist}, ${element.album}</h2>`;
     });
     // console.log(data);
   });
