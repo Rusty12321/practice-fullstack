@@ -15,6 +15,10 @@ const cors = require("cors");
 app.use(express.json());
 app.use(cors());
 
+app.get('/test', (req, res) => {
+    res.json({"hello": "world"})
+})
+
 app.get('/api/songs', (req, res) => {
     pool.query('SELECT * FROM playlist').then((result) => {
         res.send(result.rows);
